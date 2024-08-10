@@ -1,8 +1,8 @@
 import useEventBus from "@/hooks/useEventBus";
 
-const Desktop = () => {
+const Screen = () => {
   useEventBus();
   return <div>Desktop</div>;
 };
 
-export default Desktop;
+export default Screen;

@@ -1,5 +1,7 @@
 "use client";
 
+import "../lib/window.mock";
+
 import getCurrentWindow from "@/lib/overwolf/getCurrentWindow";
 import { useEffect, useState } from "react";
 import CurrentScreen from "../components/CurrentScreen";

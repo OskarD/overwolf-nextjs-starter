@@ -8,8 +8,8 @@ const { BACKGROUND, DESKTOP, IN_GAME } = WINDOW_NAMES;
 //lazy load window components, so that they are not loaded until they are needed
 //this is done to reduce the amount of time spent loading
 const BackgroundScreen = dynamic(() => import("@/screens/background/Screen"));
-const DesktopScreen = dynamic(() => import("@/screens/Desktop"));
-const InGameScreen = dynamic(() => import("@/screens/InGame"));
+const DesktopScreen = dynamic(() => import("@/screens/desktop/Screen"));
+const InGameScreen = dynamic(() => import("@/screens/in-game/Screen"));
 
 type CurrentScreenProps = {
   name?: string;

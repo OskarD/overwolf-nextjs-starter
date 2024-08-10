@@ -1,4 +1,4 @@
-import EventType from "@/lib/overwolf/EventType";
+import EventType from "@/lib/EventType";
 import { useEffect } from "react";
 import { filter } from "rxjs";
 

@@ -1,8 +1,8 @@
 import useEventBus from "@/hooks/useEventBus";
 
-const InGame = () => {
+const Screen = () => {
   useEventBus();
   return <div>InGame</div>;
 };
 
-export default InGame;
+export default Screen;

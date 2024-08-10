@@ -1,6 +1,6 @@
-import { Event } from "@/screens/background/Screen";
+import EventBusEvent from "@/lib/EventBusEvent";
 import { Subject } from "rxjs";
-import EventType from "../EventType";
+import EventType from "../../EventType";
 import gameFeatures from "../gameFeatures";
 import setOverwolfRequiredFeatures from "./setRequiredFeatures";
 import { GameState, GameStateUpdateEvent } from "./types";
@@ -10,7 +10,7 @@ type InfoUpdateEvent = overwolf.games.events.InfoUpdates2Event<
   overwolf.games.events.InfoUpdate2
 >;
 
-export const ogsEventBus = new Subject<Event>();
+export const ogsEventBus = new Subject<EventBusEvent>();
 
 class GameService {
   private static _instance: GameService;
