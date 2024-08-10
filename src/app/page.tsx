@@ -12,7 +12,7 @@ export default function Home() {
       try {
         const currentWindow = await getCurrentWindow();
         setScreenName(currentWindow);
-        console.log("Screen name", currentWindow);
+        console.log("Screen loaded:", currentWindow);
       } catch (error) {
         console.error("Failed to load window name", error);
       }

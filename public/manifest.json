@@ -65,17 +65,13 @@
           "file": "index.html",
           "in_game_only": true,
           "focus_game_takeover": "ReleaseOnHidden",
-          "focus_game_takeover_release_hotkey": "sample_app_ts_showhide",
+          "focus_game_takeover_release_hotkey": "nextjs_starter_app_showhide",
           "resizable": true,
           "transparent": true,
           "override_on_update": true,
           "size": {
-            "width": 1212,
-            "height": 699
-          },
-          "min_size": {
-            "width": 1212,
-            "height": 699
+            "width": 100,
+            "height": 100
           }
         }
       },

@@ -1,4 +1,4 @@
-import { WINDOW_NAMES } from "@/lib/windowNames";
+import { WINDOW_NAMES } from "@/lib/overwolf/windowNames";
 import isDev from "../isDev";
 
 async function getCurrentWindow() {

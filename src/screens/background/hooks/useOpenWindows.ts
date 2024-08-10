@@ -1,8 +1,11 @@
 import { WindowsService } from "@/lib/overwolf/WindowsService";
-import { WINDOW_NAMES } from "@/lib/windowNames";
+import { WINDOW_NAMES } from "@/lib/overwolf/windowNames";
 import { useEffect } from "react";
 
 type RunningGameInfo = overwolf.games.RunningGameInfo;
+
+const { getManifest } = overwolf.extensions.current;
+const { onGameLaunched } = overwolf.games;
 
 const useOpenWindows = () => {
   useEffect(() => {
@@ -13,7 +16,7 @@ const useOpenWindows = () => {
     const handleGameLaunched = ({
       classId: gameClassId,
     }: RunningGameInfo): void => {
-      overwolf.extensions.current.getManifest((result) => {
+      getManifest((result) => {
         const targetedGameIds = result.data.game_targeting?.game_ids;
         const isTargetedGameId = targetedGameIds?.includes(gameClassId);
 
@@ -25,9 +28,9 @@ const useOpenWindows = () => {
       });
     };
 
-    overwolf.games.onGameLaunched.addListener(handleGameLaunched);
+    onGameLaunched.addListener(handleGameLaunched);
     return () => {
-      overwolf.games.onGameLaunched.removeListener(handleGameLaunched);
+      onGameLaunched.removeListener(handleGameLaunched);
     };
   }, []);
 };
