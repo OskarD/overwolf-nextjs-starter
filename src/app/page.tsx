@@ -2,7 +2,7 @@
 
 import getCurrentWindow from "@/lib/overwolf/getCurrentWindow";
 import { useEffect, useState } from "react";
-import CurrentScreen from "./components/CurrentScreen";
+import CurrentScreen from "../components/CurrentScreen";
 
 export default function Home() {
   const [screenName, setScreenName] = useState<string | undefined>();

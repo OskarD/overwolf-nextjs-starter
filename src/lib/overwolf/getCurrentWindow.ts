@@ -1,4 +1,4 @@
-import { WINDOW_NAMES } from "@/app/shared/constants";
+import { WINDOW_NAMES } from "@/lib/windowNames";
 import isDev from "../isDev";
 
 async function getCurrentWindow() {

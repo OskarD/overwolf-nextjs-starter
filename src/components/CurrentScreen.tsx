@@ -1,13 +1,15 @@
 import dynamic from "next/dynamic";
 import { memo } from "react";
-import { WINDOW_NAMES } from "../shared/constants";
+import { WINDOW_NAMES } from "../lib/windowNames";
 
 //window name in manifest file
 const { BACKGROUND, DESKTOP, IN_GAME } = WINDOW_NAMES;
 
 //lazy load window components, so that they are not loaded until they are needed
 //this is done to reduce the amount of time spent loading
-const BackgroundScreen = dynamic(() => import("@/screens/Background"));
+const BackgroundScreen = dynamic(
+  () => import("@/screens/background/Background"),
+);
 const DesktopScreen = dynamic(() => import("@/screens/Desktop"));
 const InGameScreen = dynamic(() => import("@/screens/InGame"));
 
