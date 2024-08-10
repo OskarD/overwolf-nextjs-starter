@@ -3,8 +3,6 @@ export class WindowsService {
    * Obtain a window object by a name as declared in the manifest.
    * This is required in order to create the window before calling other APIs
    * on that window
-   * @param {string} name
-   * @returns {Promise<any>}
    */
   static obtainWindow = (
     name: string,
@@ -24,7 +22,6 @@ export class WindowsService {
   /**
    * Obtain the current window's object. This is required in order to create
    * the window before calling other APIs on that window
-   * @returns {Promise<any>}
    */
   static getCurrentWindow = (): Promise<overwolf.windows.WindowResult> => {
     return new Promise((resolve, reject) => {
@@ -41,8 +38,6 @@ export class WindowsService {
 
   /**
    * Restore a window by name
-   * @param {string} name
-   * @returns {Promise<any>}
    */
   static restore = async (name: string): Promise<void> => {
     const { window } = await WindowsService.obtainWindow(name);
@@ -61,8 +56,6 @@ export class WindowsService {
 
   /**
    * Minimize a window by name
-   * @param {string} name
-   * @returns {Promise<any>}
    */
   static minimize = async (name: string): Promise<void> => {
     const { window } = await WindowsService.obtainWindow(name);
@@ -81,8 +74,6 @@ export class WindowsService {
 
   /**
    * Maximize a window by name
-   * @param {string} name
-   * @returns {Promise<any>}
    */
   static maximize = async (name: string): Promise<void> => {
     const { window } = await WindowsService.obtainWindow(name);
@@ -101,8 +92,6 @@ export class WindowsService {
 
   /**
    * Close a window
-   * @param {string} name
-   * @returns {Promise<void>}
    */
   static close = async (name: string): Promise<void> => {
     const state = await WindowsService.getWindowState(name);
@@ -116,10 +105,6 @@ export class WindowsService {
 
   /**
    * Set position of a window
-   * @param {string} name
-   * @param {number} left
-   * @param {number} top
-   * @returns {Promise<any>}
    */
   static changePosition = async (
     name: string,
@@ -142,8 +127,6 @@ export class WindowsService {
 
   /**
    * Get state of the window
-   * @param {string} name
-   * @returns {Promise<string>}
    */
   static getWindowState = (
     name: string,
@@ -162,9 +145,6 @@ export class WindowsService {
 
   /**
    * Get state of the window
-   * @param {string} name
-   * @param {boolean} shouldBeTopmost
-   * @returns {Promise<any>}
    */
   static setTopmost = async (
     name: string,
@@ -186,9 +166,6 @@ export class WindowsService {
 
   /**
    * Get state of the window
-   * @param {string} name
-   * @param {boolean} grabFocus
-   * @returns {Promise<any>}
    */
   static bringToFront = async (
     name: string,
@@ -210,7 +187,6 @@ export class WindowsService {
 
   /**
    * Get states of app's windows
-   * @returns {Promise<any>}
    */
   static getWindowsStates = (): Promise<
     overwolf.Dictionary<overwolf.windows.enums.WindowStateEx>
@@ -228,7 +204,6 @@ export class WindowsService {
 
   /**
    * Get a list of monitors
-   * @returns {Promise<any[]>}
    */
   static getMonitorsList = (): Promise<overwolf.utils.Display[]> => {
     return new Promise((resolve, reject) => {
@@ -245,7 +220,6 @@ export class WindowsService {
 
   /**
    * Determine if a window stat is open (normal or maximized)
-   * @returns {Boolean}
    */
   static windowStateIsOpen = (state: string): boolean => {
     switch (state) {
