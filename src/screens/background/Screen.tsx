@@ -2,7 +2,7 @@ import EventBusEvent from "@/lib/EventBusEvent";
 import { ogsEventBus } from "@/lib/overwolf/gameService/GameService";
 import { Subject } from "rxjs";
 import useGameStateEmitter from "./hooks/useGameStateEmitter";
-import useOpenWindows from "./hooks/useOpenWindows";
+import useWindowOpener from "./hooks/useWindowOpener";
 
 declare global {
   interface Window {
@@ -13,7 +13,7 @@ declare global {
 window.eventBus = ogsEventBus;
 
 const Screen = () => {
-  useOpenWindows();
+  useWindowOpener();
   useGameStateEmitter();
   return null;
 };

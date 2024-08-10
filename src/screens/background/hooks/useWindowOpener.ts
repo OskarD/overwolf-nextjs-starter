@@ -7,7 +7,7 @@ type RunningGameInfo = overwolf.games.RunningGameInfo;
 const { getManifest } = overwolf.extensions.current;
 const { onGameLaunched } = overwolf.games;
 
-const useOpenWindows = () => {
+const useWindowOpener = () => {
   useEffect(() => {
     WindowsService.restore(WINDOW_NAMES.DESKTOP);
   }, []);
@@ -35,4 +35,4 @@ const useOpenWindows = () => {
   }, []);
 };
 
-export default useOpenWindows;
+export default useWindowOpener;
