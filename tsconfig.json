@@ -25,7 +25,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": ["@overwolf/types"],
   },
   "include": [
     "next-env.d.ts",
