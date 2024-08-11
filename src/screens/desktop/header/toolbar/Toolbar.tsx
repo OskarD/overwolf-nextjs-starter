@@ -1,4 +1,5 @@
 import getCurrentWindowName from "@/lib/overwolf/getCurrentWindowName";
+import { WINDOW_NAMES } from "@/lib/overwolf/windowNames";
 import { FC, use } from "react";
 import CloseButton from "./buttons/CloseButton";
 import DiscordButton from "./buttons/DiscordButton";
@@ -7,9 +8,9 @@ import MinimizeButton from "./buttons/MinimizeButton";
 import SettingsButton from "./buttons/SettingsButton";
 
 const Toolbar: FC = () => {
-  const windowName = use<string>(getCurrentWindowName());
+  const currentWindowName = use<string>(getCurrentWindowName());
 
-  if (windowName === undefined) {
+  if (currentWindowName === undefined) {
     return null;
   }
 
@@ -17,9 +18,9 @@ const Toolbar: FC = () => {
     <div className="flex">
       <DiscordButton />
       <SettingsButton />
-      <MinimizeButton windowName={windowName} />
-      <MaximizeOrRestoreButton windowName={windowName} />
-      <CloseButton windowName={windowName} />
+      <MinimizeButton windowName={currentWindowName} />
+      <MaximizeOrRestoreButton windowName={currentWindowName} />
+      <CloseButton windowName={WINDOW_NAMES.BACKGROUND} />
     </div>
   );
 };
