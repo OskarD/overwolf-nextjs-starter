@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { memo } from "react";
+import { FC, memo } from "react";
 import { WINDOW_NAMES } from "../lib/overwolf/windowNames";
 
 //window name in manifest file
@@ -16,9 +16,9 @@ type CurrentScreenProps = {
 };
 //return the current page based on the window name, the current window name is passed in as a prop
 //this is used to determine which page to render
-const CurrentScreen = memo(function CurrentScreen({
+const CurrentScreen: FC<CurrentScreenProps> = memo(function CurrentScreen({
   name,
-}: CurrentScreenProps) {
+}) {
   switch (name) {
     case BACKGROUND:
       return <BackgroundScreen />;

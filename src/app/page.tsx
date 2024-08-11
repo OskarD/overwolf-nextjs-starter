@@ -2,7 +2,7 @@
 
 import "../lib/window.mock";
 
-import getCurrentWindow from "@/lib/overwolf/getCurrentWindow";
+import getCurrentWindow from "@/lib/overwolf/getCurrentWindowName";
 import { useEffect, useState } from "react";
 import CurrentScreen from "../components/CurrentScreen";
 

@@ -1,7 +1,8 @@
 import useGameState from "@/hooks/useGameState";
 import { GameState } from "@/lib/overwolf/gameService/types";
+import { FC } from "react";
 
-const GameStateView = () => {
+const GameStateView: FC = () => {
   const gameState: GameState | undefined = useGameState();
 
   if (gameState === undefined) {

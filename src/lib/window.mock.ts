@@ -32,7 +32,7 @@ class MockCommonMethods {
  *
  * Progress:
  * benchmarking: 100%
- * windows: 10%
+ * windows: 15%
  * games: 70%,
  * utils: 10%
  */
@@ -118,6 +118,13 @@ const overwolfMock: typeof overwolf = {
     }, //@ts-ignore
     minimize(): void {
       console.info("Mock minimize");
+    },
+    onStateChanged: {
+      addListener: () => {},
+      removeListener: () => {},
+    },
+    getWindowState(): void {
+      console.info("Mock getWindowState");
     },
   },
   //@ts-ignore

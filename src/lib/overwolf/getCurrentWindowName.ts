@@ -3,7 +3,7 @@ import isDev from "../isDev";
 
 async function getCurrentWindow() {
   if (isDev) {
-    const windowName = WINDOW_NAMES.IN_GAME;
+    const windowName = WINDOW_NAMES.DESKTOP;
     console.log(
       `Running in dev mode, returning ${windowName} window, you can change this in src/lib/overwolf-essentials.ts: getCurrent`,
       "src/lib/overwolf-essentials.ts",
