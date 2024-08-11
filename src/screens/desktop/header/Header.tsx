@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import logo from "./logo.jpg";
+import logo from "./logo.ico";
 import Toolbar from "./toolbar/Toolbar";
 
 const Header: FC = () => (
